@@ -1,8 +1,5 @@
 extends Control
 
-var mouse_in = false
-var press = false
-
 func _ready() -> void:
 	if not SaveManager.ach_secret_room:
 		SaveManager.ach_secret_room = true
@@ -12,16 +9,8 @@ func _ready() -> void:
 	$IMoney.text = str(SaveManager.increase_money)
 	$ITimer.text = str(SaveManager.increase_timer)
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			$Animation.play("Wake Up")
-
-func _on_cat_mouse_entered() -> void:
-	mouse_in = true
-
-func _on_cat_mouse_exited() -> void:
-	mouse_in = false
+func _on_cat_pressed() -> void:
+	$Animation.play("Wake Up")
 
 func _on_money_text_changed(new_text) -> void:
 	SaveManager.money = new_text
