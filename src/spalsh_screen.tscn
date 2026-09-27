@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://b665jks17itp2"]
+
+[ext_resource type="Script" uid="uid://woesltdkbune" path="res://src/spalsh_screen.gd" id="1_2uxjc"]
+[ext_resource type="Texture2D" uid="uid://cjuy05k4pj16e" path="res://spr/lucky_cat.png" id="1_amury"]
+
+[sub_resource type="Animation" id="Animation_a7vox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3jjdg"]
+resource_name = "Splash"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.75, 0.8, 0.85),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(4.5, 4.5), Vector2(4, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c586n"]
+_data = {
+&"RESET": SubResource("Animation_a7vox"),
+&"Splash": SubResource("Animation_3jjdg")
+}
+
+[node name="Spalsh Screen" type="Control" unique_id=1632665300]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2uxjc")
+
+[node name="Background" type="ColorRect" parent="." unique_id=78828358]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=954748710]
+position = Vector2(576, 320)
+scale = Vector2(4, 4)
+texture = ExtResource("1_amury")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1609431714]
+libraries/ = SubResource("AnimationLibrary_c586n")
+autoplay = &"Splash"
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]

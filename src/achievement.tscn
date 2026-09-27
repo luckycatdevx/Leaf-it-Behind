@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://d0r6riclgc648"]
+
+[ext_resource type="Script" uid="uid://cbpvc21c4j3d4" path="res://src/achievement.gd" id="1_umcfk"]
+[ext_resource type="Texture2D" uid="uid://btnp5iw72k3yq" path="res://spr/bg_4.png" id="1_wmtob"]
+[ext_resource type="Texture2D" uid="uid://cl2bnrh3hv3kl" path="res://spr/ach.png" id="2_akrgb"]
+[ext_resource type="Texture2D" uid="uid://bniad48wtugx6" path="res://spr/leaf_3.png" id="3_wbl2c"]
+[ext_resource type="Texture2D" uid="uid://bammyn2em1v5r" path="res://spr/locked.png" id="4_l4kpo"]
+[ext_resource type="Script" uid="uid://buwwck2dswxb8" path="res://src/button.gd" id="4_umcfk"]
+[ext_resource type="AudioStream" uid="uid://buteu3plc2kii" path="res://mus/achievement.wav" id="7_bt7wa"]
+
+[node name="Achievement" type="Control" unique_id=1267753547]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_umcfk")
+
+[node name="Background" type="ParallaxBackground" parent="." unique_id=1045128067]
+
+[node name="Texture" type="Sprite2D" parent="Background" unique_id=1120138711]
+scale = Vector2(3, 3)
+texture = ExtResource("1_wmtob")
+centered = false
+
+[node name="Title" type="Label" parent="." unique_id=1264856576]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 768.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 24
+text = "Achievement"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ach1" type="TextureRect" parent="." unique_id=1268665997]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 192.0
+offset_right = 432.0
+offset_bottom = 288.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_akrgb")
+stretch_mode = 2
+
+[node name="Text" type="Label" parent="Ach1" unique_id=1730627037]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 179.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 8
+text = "Get your first
+upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="Ach1" unique_id=518539094]
+layout_mode = 0
+offset_left = 10.666672
+offset_top = 8.0
+offset_right = 149.33334
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 8
+text = "Frist Upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texture" type="TextureRect" parent="Ach1" unique_id=1097744948]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 7.99999
+offset_right = 184.0
+offset_bottom = 32.000004
+texture = ExtResource("4_l4kpo")
+stretch_mode = 3
+
+[node name="Ach2" type="TextureRect" parent="." unique_id=2087607422]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 192.0
+offset_right = 816.0
+offset_bottom = 288.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_akrgb")
+stretch_mode = 2
+
+[node name="Text" type="Label" parent="Ach2" unique_id=1249024632]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 184.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 8
+text = "Collect 500 money"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="Ach2" unique_id=910048917]
+layout_mode = 0
+offset_left = 10.666687
+offset_top = 8.0
+offset_right = 149.33337
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 8
+text = "More Money"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texture" type="TextureRect" parent="Ach2" unique_id=8026078]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 7.99999
+offset_right = 184.0
+offset_bottom = 32.000004
+texture = ExtResource("4_l4kpo")
+stretch_mode = 3
+
+[node name="Ach3" type="TextureRect" parent="." unique_id=609004717]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 400.0
+offset_right = 432.0
+offset_bottom = 496.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_akrgb")
+stretch_mode = 2
+
+[node name="Text" type="Label" parent="Ach3" unique_id=1352351023]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 184.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 8
+text = "Let the timer exceed 
+99 sec"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="Ach3" unique_id=2013027035]
+layout_mode = 0
+offset_left = 10.666672
+offset_top = 8.0
+offset_right = 149.33334
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 8
+text = "Best Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texture" type="TextureRect" parent="Ach3" unique_id=1455716533]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 7.99999
+offset_right = 184.0
+offset_bottom = 32.000004
+texture = ExtResource("4_l4kpo")
+stretch_mode = 3
+
+[node name="Ach4" type="TextureRect" parent="." unique_id=273688910]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 400.0
+offset_right = 816.0
+offset_bottom = 496.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_akrgb")
+stretch_mode = 2
+
+[node name="Text" type="Label" parent="Ach4" unique_id=1803195856]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 184.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 8
+text = "It's a secret, so
+find out for yourself"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="Ach4" unique_id=1778169129]
+layout_mode = 0
+offset_left = 10.666687
+offset_top = 8.0
+offset_right = 149.33337
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 8
+text = "Secret Room"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texture" type="TextureRect" parent="Ach4" unique_id=881093289]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 7.99999
+offset_right = 184.0
+offset_bottom = 32.000004
+texture = ExtResource("4_l4kpo")
+stretch_mode = 3
+
+[node name="Back" type="Button" parent="." unique_id=1958432159]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013888889
+anchor_top = 0.90123457
+anchor_right = 0.11805555
+anchor_bottom = 0.97530866
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Back"
+icon = ExtResource("3_wbl2c")
+flat = true
+script = ExtResource("4_umcfk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=984944273]
+stream = ExtResource("7_bt7wa")
+autoplay = true
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]

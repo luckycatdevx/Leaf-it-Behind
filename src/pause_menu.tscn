@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://buqjmx2orwgq7"]
+
+[ext_resource type="Script" uid="uid://dhlr6we2kyj31" path="res://src/pause_menu.gd" id="1_gelpt"]
+[ext_resource type="Texture2D" uid="uid://p5no2rcr414n" path="res://spr/leaf_1.png" id="2_k8h4s"]
+[ext_resource type="Script" uid="uid://buwwck2dswxb8" path="res://src/button.gd" id="3_37n3i"]
+[ext_resource type="Texture2D" uid="uid://bniad48wtugx6" path="res://spr/leaf_3.png" id="4_3yn0j"]
+[ext_resource type="Texture2D" uid="uid://5iwm25ngq0la" path="res://spr/leaf_2.png" id="4_k8h4s"]
+[ext_resource type="AudioStream" uid="uid://b8iwl7wpn1fjl" path="res://snd/click.wav" id="6_37n3i"]
+
+[node name="Pause Menu" type="CanvasLayer" unique_id=1499502852]
+process_mode = 3
+visible = false
+script = ExtResource("1_gelpt")
+
+[node name="Background" type="ColorRect" parent="." unique_id=644646834]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.29411766)
+
+[node name="Pause" type="Label" parent="." unique_id=404250489]
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 32
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="." unique_id=250438987]
+anchors_preset = -1
+anchor_left = 0.104166664
+anchor_top = 0.43209878
+anchor_right = 0.21875
+anchor_bottom = 0.50617284
+offset_left = 368.0
+offset_top = 56.0
+offset_right = 412.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Continue"
+icon = ExtResource("2_k8h4s")
+flat = true
+script = ExtResource("3_37n3i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Retry" type="Button" parent="." unique_id=824357633]
+anchors_preset = -1
+anchor_left = 0.104166664
+anchor_top = 0.43209878
+anchor_right = 0.22569445
+anchor_bottom = 0.50617284
+offset_left = 256.0
+offset_top = 120.0
+offset_right = 260.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Retry"
+icon = ExtResource("4_k8h4s")
+flat = true
+script = ExtResource("3_37n3i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit To Menu" type="Button" parent="." unique_id=1725314446]
+anchors_preset = -1
+anchor_left = 0.104166664
+anchor_top = 0.6296296
+anchor_right = 0.21006945
+anchor_bottom = 0.7037037
+offset_left = 416.0
+offset_top = -8.0
+offset_right = 534.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Quit To Menu"
+icon = ExtResource("4_3yn0j")
+flat = true
+script = ExtResource("3_37n3i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1955213009]
+stream = ExtResource("6_37n3i")
+bus = &"Sound"
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit To Menu" to="." method="_on_quit_to_menu_pressed"]

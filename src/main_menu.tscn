@@ -1,0 +1,861 @@
+[gd_scene format=3 uid="uid://deutk3y7355p0"]
+
+[ext_resource type="Script" uid="uid://utyg2meja3w4" path="res://src/main_menu.gd" id="1_6w7d7"]
+[ext_resource type="Script" uid="uid://buwwck2dswxb8" path="res://src/button.gd" id="1_guuao"]
+[ext_resource type="Texture2D" uid="uid://6pwjk1rw8naa" path="res://spr/bg_1.png" id="2_6w7d7"]
+[ext_resource type="Texture2D" uid="uid://p5no2rcr414n" path="res://spr/leaf_1.png" id="2_32mut"]
+[ext_resource type="Texture2D" uid="uid://dmodppr55yjdy" path="res://spr/itch_io.png" id="4_1jpog"]
+[ext_resource type="Texture2D" uid="uid://c0m8lkewqoa10" path="res://spr/logo.png" id="4_kojm2"]
+[ext_resource type="Texture2D" uid="uid://dg6dogcpome6" path="res://spr/youtube.png" id="5_32mut"]
+[ext_resource type="Texture2D" uid="uid://cvmrklhj4lyhq" path="res://spr/ko-fi.png" id="6_kojm2"]
+[ext_resource type="Texture2D" uid="uid://5iwm25ngq0la" path="res://spr/leaf_2.png" id="6_qufii"]
+[ext_resource type="Texture2D" uid="uid://bxhyhnrxctawc" path="res://spr/ach_icon.png" id="7_jreu0"]
+[ext_resource type="Texture2D" uid="uid://bniad48wtugx6" path="res://spr/leaf_3.png" id="7_n1bac"]
+[ext_resource type="Texture2D" uid="uid://hh55su6dhjp8" path="res://spr/leaf_4.png" id="11_n1bac"]
+[ext_resource type="AudioStream" uid="uid://bg5tpkw52j51c" path="res://mus/main_menu.wav" id="12_jdpbp"]
+[ext_resource type="AudioStream" uid="uid://b8iwl7wpn1fjl" path="res://snd/click.wav" id="13_pssrw"]
+
+[sub_resource type="Curve" id="Curve_g4v7s"]
+_data = [Vector2(0.7, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1wfgh"]
+color = Color(0, 0, 0, 0.49803922)
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bq8pk"]
+color = Color(1, 1, 1, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_pssrw"]
+color = Color(0.75, 0.75, 0.75, 1)
+thickness = 8
+
+[sub_resource type="Animation" id="Animation_n1bac"]
+resource_name = "Animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ko-fi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-136, 584), Vector2(200, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-336, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Logo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(288, 128), Vector2(32, 48)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Start:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-256, 280), Vector2(64, 280)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Options:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-256, 448), Vector2(64, 448)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Quit:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-256, 504), Vector2(64, 504)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Itchio:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-264, 584), Vector2(72, 584)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("YouTube:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-200, 584), Vector2(136, 584)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Logo:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(2, 2)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Background/Color:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.039215688), Color(0, 0, 0, 0.23529412)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Any:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Shop:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-256, 336), Vector2(64, 336)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Ach:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-256, 392), Vector2(64, 392)]
+}
+
+[sub_resource type="Animation" id="Animation_pssrw"]
+resource_name = "Animation2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75, 1),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Any:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_jdpbp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ko-fi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-136, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-336, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Logo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(304, 128)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Start:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 280)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Options:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 448)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Quit:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 504)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Itchio:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-264, 584)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("YouTube:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, 584)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Logo:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 4)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Background/Color:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.039215688)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Logo:offset_transform_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Any:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Shop:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 336)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Ach:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 392)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pssrw"]
+_data = {
+&"Animation 1": SubResource("Animation_n1bac"),
+&"Animation 2": SubResource("Animation_pssrw"),
+&"RESET": SubResource("Animation_jdpbp")
+}
+
+[node name="Main Menu" type="Control" unique_id=1353805346]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+layout_direction = 2
+script = ExtResource("1_6w7d7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="." unique_id=135034359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5019608, 0.16470589, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Particles" type="CPUParticles2D" parent="Background" unique_id=1003416506]
+position = Vector2(832, 152)
+amount = 4
+texture = ExtResource("2_32mut")
+lifetime = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(320, 25)
+gravity = Vector2(0, 122.5)
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_g4v7s")
+
+[node name="Tree" type="TextureRect" parent="Background" unique_id=1441645218]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6w7d7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Color" type="ColorRect" parent="Background" unique_id=634836630]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.039215688)
+
+[node name="Panel" type="ColorRect" parent="." unique_id=685446170]
+layout_mode = 0
+offset_left = -336.0
+offset_bottom = 648.0
+color = Color(0.7058824, 0.1764706, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1706740556]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 128.0
+offset_right = 440.0
+offset_bottom = 232.00002
+scale = Vector2(4, 4)
+offset_transform_enabled = true
+texture = ExtResource("4_kojm2")
+
+[node name="Any" type="Label" parent="." unique_id=1641013357]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 544.0
+offset_right = 768.0
+offset_bottom = 600.0
+text = "Press Any Button"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="." unique_id=1734562186]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104166664
+anchor_top = 0.43209878
+anchor_right = 0.21527778
+anchor_bottom = 0.50617284
+offset_left = -376.0
+offset_right = -376.0
+offset_bottom = 6.1035156e-05
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Start"
+icon = ExtResource("2_32mut")
+flat = true
+script = ExtResource("1_guuao")
+
+[node name="Shop" type="Button" parent="." unique_id=1260433770]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104166664
+anchor_top = 0.5308642
+anchor_right = 0.24305555
+anchor_bottom = 0.60493827
+offset_left = -376.0
+offset_top = -8.0
+offset_right = -416.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Shop"
+icon = ExtResource("11_n1bac")
+flat = true
+script = ExtResource("1_guuao")
+
+[node name="Ach" type="Button" parent="." unique_id=547775996]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104166664
+anchor_top = 0.5308642
+anchor_right = 0.24305555
+anchor_bottom = 0.60493827
+offset_left = -376.0
+offset_top = 48.0
+offset_right = -305.99982
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Achievement"
+icon = ExtResource("7_jreu0")
+flat = true
+script = ExtResource("1_guuao")
+
+[node name="Options" type="Button" parent="." unique_id=1113626041]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104166664
+anchor_top = 0.5308642
+anchor_right = 0.24305555
+anchor_bottom = 0.60493827
+offset_left = -376.0
+offset_top = 104.0
+offset_right = -376.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Options"
+icon = ExtResource("6_qufii")
+flat = true
+script = ExtResource("1_guuao")
+
+[node name="Quit" type="Button" parent="." unique_id=1902288550]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104166664
+anchor_top = 0.6296296
+anchor_right = 0.2013889
+anchor_bottom = 0.7037037
+offset_left = -376.0
+offset_top = 96.0
+offset_right = -376.0
+offset_bottom = 95.99994
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Quit"
+icon = ExtResource("7_n1bac")
+flat = true
+script = ExtResource("1_guuao")
+
+[node name="Itchio" type="Button" parent="." unique_id=2083758518]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.90123457
+anchor_right = 0.104166664
+anchor_bottom = 0.97530866
+offset_left = -336.0
+offset_right = -336.0
+icon = ExtResource("4_1jpog")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_guuao")
+hov_color = Color(1, 1, 1, 1)
+
+[node name="YouTube" type="Button" parent="." unique_id=1444617639]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11805555
+anchor_top = 0.90123457
+anchor_right = 0.15972222
+anchor_bottom = 0.97530866
+offset_left = -336.0
+offset_right = -336.0
+icon = ExtResource("5_32mut")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_guuao")
+hov_color = Color(1, 1, 1, 1)
+
+[node name="Ko-fi" type="Button" parent="." unique_id=1076268503]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1736111
+anchor_top = 0.90123457
+anchor_right = 0.21527778
+anchor_bottom = 0.97530866
+offset_left = -336.0
+offset_right = -336.0
+icon = ExtResource("6_kojm2")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_guuao")
+hov_color = Color(1, 1, 1, 1)
+
+[node name="Options Menu" type="Control" parent="." unique_id=819258450]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" type="ColorRect" parent="Options Menu" unique_id=47695130]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+metadata/_edit_use_anchors_ = true
+
+[node name="English" type="Button" parent="Options Menu" unique_id=1719507164]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6736111
+anchor_top = 0.2962963
+anchor_right = 0.7847222
+anchor_bottom = 0.37037036
+offset_bottom = 1.5258789e-05
+theme_override_colors/font_color = Color(1, 0.08333331, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.08235294, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "English"
+flat = true
+script = ExtResource("1_guuao")
+metadata/_edit_use_anchors_ = true
+
+[node name="Arabic" type="Button" parent="Options Menu" unique_id=1285478461]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6805556
+anchor_top = 0.5185185
+anchor_right = 0.7777778
+anchor_bottom = 0.59259254
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Arabic"
+flat = true
+script = ExtResource("1_guuao")
+metadata/_edit_use_anchors_ = true
+
+[node name="Music" type="HSlider" parent="Options Menu" unique_id=1270903159]
+layout_mode = 0
+anchor_left = 0.11111111
+anchor_top = 0.32098764
+anchor_right = 0.3888889
+anchor_bottom = 0.34567901
+offset_top = 1.5258789e-05
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("11_n1bac")
+theme_override_icons/grabber_highlight = ExtResource("11_n1bac")
+theme_override_icons/grabber_disabled = ExtResource("11_n1bac")
+theme_override_styles/slider = SubResource("StyleBoxLine_1wfgh")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_bq8pk")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_pssrw")
+max_value = 80.0
+value = 80.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="Options Menu/Music" unique_id=1948584423]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -3.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Music"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sound" type="HSlider" parent="Options Menu" unique_id=336368554]
+layout_mode = 0
+anchor_left = 0.11111111
+anchor_top = 0.5185185
+anchor_right = 0.3888889
+anchor_bottom = 0.54320985
+offset_bottom = 3.0517578e-05
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("11_n1bac")
+theme_override_icons/grabber_highlight = ExtResource("11_n1bac")
+theme_override_icons/grabber_disabled = ExtResource("11_n1bac")
+theme_override_styles/slider = SubResource("StyleBoxLine_1wfgh")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_bq8pk")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_pssrw")
+max_value = 80.0
+value = 80.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="Options Menu/Sound" unique_id=1667633448]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -3.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Sound"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Options Menu" unique_id=1779983702]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 448.0
+offset_right = 1080.0
+offset_bottom = 552.0
+theme_override_font_sizes/font_size = 12
+text = " Made For:
+Music By:
+Sounds From"
+
+[node name="Jam" type="Button" parent="Options Menu" unique_id=1569462227]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7916667
+anchor_top = 0.69135803
+anchor_right = 0.9375
+anchor_bottom = 0.7407407
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+flat = true
+script = ExtResource("1_guuao")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="Options Menu/Jam" unique_id=515858373]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 32.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.25, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[wave amp=45.0 freq=8.0 connected=1]Cozy Fall 2026[/wave]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Music2" type="Button" parent="Options Menu" unique_id=1525516077]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7777778
+anchor_top = 0.7407407
+anchor_right = 0.8333333
+anchor_bottom = 0.7901234
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+flat = true
+script = ExtResource("1_guuao")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="Options Menu/Music2" unique_id=561510280]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 32.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.33333325, 1, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[wave amp=45.0 freq=8.0 connected=1]?????[/wave]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Sound2" type="Button" parent="Options Menu" unique_id=889388957]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8194444
+anchor_top = 0.79012346
+anchor_right = 0.9236111
+anchor_bottom = 0.83950615
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+flat = true
+script = ExtResource("1_guuao")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="Options Menu/Sound2" unique_id=112724062]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 32.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[wave amp=45.0 freq=8.0 connected=1]Undertale[/wave]"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="Options Menu" unique_id=509569968]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013888889
+anchor_top = 0.90123457
+anchor_right = 0.11805555
+anchor_bottom = 0.97530866
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Back"
+icon = ExtResource("7_n1bac")
+flat = true
+script = ExtResource("1_guuao")
+metadata/_edit_use_anchors_ = true
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=863265542]
+stream = ExtResource("12_jdpbp")
+autoplay = true
+bus = &"Music"
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1643223597]
+stream = ExtResource("13_pssrw")
+bus = &"Sound"
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1453648385]
+libraries/ = SubResource("AnimationLibrary_pssrw")
+autoplay = &"Animation 2"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Ach" to="." method="_on_ach_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Itchio" to="." method="_on_itchio_pressed"]
+[connection signal="pressed" from="YouTube" to="." method="_on_you_tube_pressed"]
+[connection signal="pressed" from="Ko-fi" to="." method="_on_kofi_pressed"]
+[connection signal="pressed" from="Options Menu/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="Options Menu/Arabic" to="." method="_on_arabic_pressed"]
+[connection signal="value_changed" from="Options Menu/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Options Menu/Sound" to="." method="_on_sound_value_changed"]
+[connection signal="pressed" from="Options Menu/Jam" to="." method="_on_jam_pressed"]
+[connection signal="pressed" from="Options Menu/Music2" to="." method="_on_music_2_pressed"]
+[connection signal="pressed" from="Options Menu/Sound2" to="." method="_on_sound_2_pressed"]
+[connection signal="pressed" from="Options Menu/Back" to="." method="_on_back_pressed"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]

@@ -1,0 +1,244 @@
+[gd_scene format=3 uid="uid://cj8c30t32ju8f"]
+
+[ext_resource type="Script" uid="uid://rhxv6vb7ysj8" path="res://src/shop.gd" id="1_pmdop"]
+[ext_resource type="Texture2D" uid="uid://crp0ch6cyufo1" path="res://spr/bg_2.png" id="2_ra5xc"]
+[ext_resource type="Script" uid="uid://buwwck2dswxb8" path="res://src/button.gd" id="3_1cjfr"]
+[ext_resource type="Texture2D" uid="uid://hh55su6dhjp8" path="res://spr/leaf_4.png" id="3_3uhad"]
+[ext_resource type="AudioStream" uid="uid://xmh6prr2nbtw" path="res://mus/shop.wav" id="3_ra5xc"]
+[ext_resource type="AudioStream" uid="uid://byoir0pg0sfbm" path="res://snd/upgrade.wav" id="4_enxd7"]
+[ext_resource type="Texture2D" uid="uid://ci6i04atekx2x" path="res://spr/teddy_cat.png" id="4_rou0w"]
+[ext_resource type="AudioStream" uid="uid://cc4v8e4u4dvms" path="res://snd/ab.wav" id="5_gf3jv"]
+[ext_resource type="Texture2D" uid="uid://bniad48wtugx6" path="res://spr/leaf_3.png" id="6_yb4pk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cjfr"]
+bg_color = Color(0.9137255, 0.38039216, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.9137255, 0.23137255, 0, 1)
+
+[sub_resource type="Animation" id="Animation_57fcx"]
+resource_name = "Animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0, 0, 0),
+"update": 0,
+"values": [0.2617994, -0.2617994, 0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_3uhad"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.2617994]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yb4pk"]
+_data = {
+&"Animation": SubResource("Animation_57fcx"),
+&"RESET": SubResource("Animation_3uhad")
+}
+
+[node name="Shop" type="Control" unique_id=43827712]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+layout_direction = 2
+script = ExtResource("1_pmdop")
+
+[node name="Background" type="ParallaxBackground" parent="." unique_id=1227465944]
+
+[node name="Layer" type="ParallaxLayer" parent="Background" unique_id=239812152]
+motion_mirroring = Vector2(1152, 648)
+
+[node name="Texture" type="Sprite2D" parent="Background/Layer" unique_id=864331894]
+scale = Vector2(3, 3)
+texture = ExtResource("2_ra5xc")
+centered = false
+
+[node name="Money2" type="Label" parent="." unique_id=1293526745]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.33333325, 1, 0, 1)
+text = "Money: 0"
+vertical_alignment = 1
+
+[node name="Timer" type="Button" parent="." unique_id=1381897014]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 416.0
+offset_right = 320.0
+offset_bottom = 480.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1cjfr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1cjfr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1cjfr")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1cjfr")
+text = "Bay: 5"
+icon = ExtResource("3_3uhad")
+flat = true
+expand_icon = true
+script = ExtResource("3_1cjfr")
+
+[node name="Text" type="Label" parent="Timer" unique_id=1251518741]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -192.0
+offset_right = 224.0
+offset_bottom = -128.0
+text = "Increase Timer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="Timer" unique_id=1465893358]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 224.0
+offset_bottom = -32.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Money" type="Button" parent="." unique_id=277162548]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 416.0
+offset_right = 672.0
+offset_bottom = 480.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1cjfr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1cjfr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1cjfr")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1cjfr")
+text = "Bay: 10"
+icon = ExtResource("3_3uhad")
+flat = true
+expand_icon = true
+script = ExtResource("3_1cjfr")
+
+[node name="Text" type="Label" parent="Money" unique_id=960001315]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -192.0
+offset_right = 224.0
+offset_bottom = -128.0
+text = "Increase Money"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="Money" unique_id=1110548320]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 224.0
+offset_bottom = -32.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Teddy" type="Button" parent="." unique_id=329318727]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 424.0
+offset_right = 1024.0
+offset_bottom = 488.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1cjfr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1cjfr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1cjfr")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1cjfr")
+text = "Bay: 0.99"
+icon = ExtResource("3_3uhad")
+flat = true
+expand_icon = true
+script = ExtResource("3_1cjfr")
+
+[node name="Text" type="Label" parent="Teddy" unique_id=718038710]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -200.0
+offset_right = 224.0
+offset_bottom = -136.0
+text = "Teddy Cat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texture" type="TextureRect" parent="Teddy" unique_id=672010494]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 8.0
+offset_transform_enabled = true
+offset_transform_rotation = 0.2617994
+texture = ExtResource("4_rou0w")
+stretch_mode = 5
+
+[node name="Animation" type="AnimationPlayer" parent="Teddy" unique_id=225775464]
+libraries/ = SubResource("AnimationLibrary_yb4pk")
+autoplay = &"Animation"
+
+[node name="Back" type="Button" parent="." unique_id=503708355]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013888889
+anchor_top = 0.90123457
+anchor_right = 0.11805555
+anchor_bottom = 0.97530866
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "Back"
+icon = ExtResource("6_yb4pk")
+flat = true
+script = ExtResource("3_1cjfr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=995809891]
+stream = ExtResource("3_ra5xc")
+autoplay = true
+bus = &"Music"
+
+[node name="Upgrade" type="AudioStreamPlayer" parent="." unique_id=351281188]
+stream = ExtResource("4_enxd7")
+
+[node name="Ab" type="AudioStreamPlayer" parent="." unique_id=549736990]
+stream = ExtResource("5_gf3jv")
+
+[connection signal="pressed" from="Timer" to="." method="_on_timer_pressed"]
+[connection signal="pressed" from="Money" to="." method="_on_money_pressed"]
+[connection signal="pressed" from="Teddy" to="." method="_on_teddy_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]

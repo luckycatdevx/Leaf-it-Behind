@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bqk4c578how5k"]
+
+[ext_resource type="Texture2D" uid="uid://p5no2rcr414n" path="res://spr/leaf_1.png" id="1_f4srp"]
+[ext_resource type="Script" uid="uid://c6wtgjj28u3m5" path="res://src/leaf.gd" id="1_tjvsh"]
+[ext_resource type="AudioStream" uid="uid://bbk3vx2hkxq2n" path="res://snd/trash.wav" id="3_8oass"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjvsh"]
+radius = 19.199999
+
+[sub_resource type="Animation" id="Animation_owrxr"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8oass"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.25, 1.25)]
+}
+
+[sub_resource type="Animation" id="Animation_tjvsh"]
+resource_name = "Animation"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_owrxr"]
+_data = {
+&"Idle": SubResource("Animation_owrxr"),
+&"RESET": SubResource("Animation_8oass"),
+&"Start": SubResource("Animation_tjvsh")
+}
+
+[node name="Leaf" type="Area2D" unique_id=2119894383 groups=["leaf"]]
+scale = Vector2(1.25, 1.25)
+script = ExtResource("1_tjvsh")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1895243433]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_f4srp")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1259393947]
+shape = SubResource("CircleShape2D_tjvsh")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=1222360364]
+scale = Vector2(0.99999994, 0.99999994)
+stream = ExtResource("3_8oass")
+bus = &"Sound"
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1437386320]
+libraries/ = SubResource("AnimationLibrary_owrxr")
+autoplay = &"Start"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
